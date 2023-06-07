@@ -31,7 +31,8 @@ struct MessageHandler: View {
                     .padding(.bottom)
             }
         }
-        .frame(height: 100)
+        .frame(width: 250, height: 100)
+        .cornerRadius(10)
     }
 }
 
