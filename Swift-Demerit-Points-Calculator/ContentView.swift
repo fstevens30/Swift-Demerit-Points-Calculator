@@ -36,12 +36,25 @@ struct ContentView: View {
             Toggle("Holiday Period", isOn: $holidayPeriod)
                 .padding()
             
-            Button("Calculate") {
-                calculateDemeritPoints()
+            HStack {
+                
+                Button("Calculate") {
+                    calculateDemeritPoints()
+                }
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                
+                Button("Reset") {
+                    showErrorMessage = false
+                    drivingSpeed = ""
+                    speedLimit = ""
+                    holidayPeriod = false
+                }
+                .padding()
+                .buttonStyle(.bordered)
+                .tint(.red)
             }
-            .padding()
-            .buttonStyle(.borderedProminent)
-            
         }
         .padding()
         .overlay(
