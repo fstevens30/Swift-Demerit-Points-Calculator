@@ -11,7 +11,6 @@
 		3A54BDFE2A2FF85D0009EC40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54BDFD2A2FF85D0009EC40 /* ContentView.swift */; };
 		3A54BE002A2FF85E0009EC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A54BDFF2A2FF85E0009EC40 /* Assets.xcassets */; };
 		3A54BE032A2FF85E0009EC40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A54BE022A2FF85E0009EC40 /* Preview Assets.xcassets */; };
-		3A54BE0A2A2FFA2A0009EC40 /* getDemeritPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54BE092A2FFA2A0009EC40 /* getDemeritPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		3A54BDFD2A2FF85D0009EC40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A54BDFF2A2FF85E0009EC40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A54BE022A2FF85E0009EC40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3A54BE092A2FFA2A0009EC40 /* getDemeritPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDemeritPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +53,6 @@
 			children = (
 				3A54BDFB2A2FF85D0009EC40 /* Swift_Demerit_Points_CalculatorApp.swift */,
 				3A54BDFD2A2FF85D0009EC40 /* ContentView.swift */,
-				3A54BE092A2FFA2A0009EC40 /* getDemeritPoints.swift */,
 				3A54BDFF2A2FF85E0009EC40 /* Assets.xcassets */,
 				3A54BE012A2FF85E0009EC40 /* Preview Content */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A54BE0A2A2FFA2A0009EC40 /* getDemeritPoints.swift in Sources */,
 				3A54BDFE2A2FF85D0009EC40 /* ContentView.swift in Sources */,
 				3A54BDFC2A2FF85D0009EC40 /* Swift_Demerit_Points_CalculatorApp.swift in Sources */,
 			);

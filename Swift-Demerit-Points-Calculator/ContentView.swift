@@ -15,13 +15,22 @@ struct ContentView: View {
     @State private var penaltyPoints: Int = 0
     
     var body: some View {
-        VStack {
+        ScrollView {
             
-            TextField("Driving Speed", text: $drivingSpeed)
-                .padding()
+            Text("Demerit Points Calculator")
+                .font(.title)
             
-            TextField("Speed Limit", text: $speedLimit)
-                .padding()
+            HStack {
+                TextField("Driving Speed", text: $drivingSpeed)
+                    .keyboardType(.decimalPad)
+                    .padding()
+                    .textFieldStyle(.roundedBorder)
+                
+                TextField("Speed Limit", text: $speedLimit)
+                    .keyboardType(.decimalPad)
+                    .padding()
+                    .textFieldStyle(.roundedBorder)
+            }
             
             Toggle("Holiday Period", isOn: $holidayPeriod)
                 .padding()
@@ -30,6 +39,7 @@ struct ContentView: View {
                 calculateDemeritPoints()
             }
             .padding()
+            .buttonStyle(.borderedProminent)
             
             Text("Mandatory Penalty: \(mandatoryPenalty ? "True" : "False")")
             Text("Penalty Points: \(penaltyPoints)")
@@ -48,6 +58,40 @@ struct ContentView: View {
         penaltyPoints = result.penaltyPoints
     }
         
+}
+
+func getDemeritPoints(drivingSpeed: Double, speedLimit: Int, holidayPeriod: Bool = false) -> (mandatoryPenalty: Bool, penaltyPoints: Int) {
+    let speedDiff = drivingSpeed - Double(speedLimit)
+    
+    if drivingSpeed <= Double(speedLimit) {
+        return (false, 0)
+    }
+    
+    if holidayPeriod {
+        if speedDiff <= 4 {
+            return (false, 10)
+        } else if speedDiff <= 10 {
+            return (true, 10)
+        } else if speedDiff <= 20 {
+            return (true, 20)
+        } else if speedDiff <= 30 {
+            return (true, 30)
+        } else {
+            return (true, 50)
+        }
+    } else {
+        if speedDiff <= 5 {
+            return (false, 10)
+        } else if speedDiff <= 10 {
+            return (true, 10)
+        } else if speedDiff <= 20 {
+            return (true, 20)
+        } else if speedDiff <= 30 {
+            return (true, 30)
+        } else {
+            return (true, 50)
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
