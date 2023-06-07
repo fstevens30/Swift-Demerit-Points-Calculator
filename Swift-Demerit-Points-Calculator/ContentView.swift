@@ -20,21 +20,25 @@ struct ContentView: View {
             
             Text("Demerit Points Calculator")
                 .font(.title)
+                .bold()
             
             HStack {
                 TextField("Driving Speed", text: $drivingSpeed)
                     .keyboardType(.decimalPad)
                     .padding()
                     .textFieldStyle(.roundedBorder)
+                    .bold()
                 
                 TextField("Speed Limit", text: $speedLimit)
                     .keyboardType(.decimalPad)
                     .padding()
                     .textFieldStyle(.roundedBorder)
+                    .bold()
             }
             
             Toggle("Holiday Period", isOn: $holidayPeriod)
                 .padding()
+                .tint(.blue)
             
             HStack {
                 
@@ -43,7 +47,8 @@ struct ContentView: View {
                 }
                 .padding()
                 .buttonStyle(.borderedProminent)
-                .tint(.green)
+                .tint(.blue)
+                .bold()
                 
                 Button("Reset") {
                     showErrorMessage = false
@@ -54,6 +59,7 @@ struct ContentView: View {
                 .padding()
                 .buttonStyle(.bordered)
                 .tint(.red)
+                .bold()
             }
         }
         .padding()
