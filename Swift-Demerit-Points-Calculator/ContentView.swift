@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var showErrorMessage: Bool = false
     
     var body: some View {
-        ScrollView {
+        VStack {
             
             Text("Demerit Points Calculator")
                 .font(.title)
@@ -57,7 +57,7 @@ struct ContentView: View {
             }
         }
         .padding()
-        .overlay(
+        
             Group {
                 if showErrorMessage {
                     MessageHandler(mandatoryPenalty: mandatoryPenalty, penaltyPoints: penaltyPoints)
@@ -65,7 +65,6 @@ struct ContentView: View {
                         .transition(.move(edge: .bottom))
                 }
             }
-            )
     }
     
     private func calculateDemeritPoints() {
