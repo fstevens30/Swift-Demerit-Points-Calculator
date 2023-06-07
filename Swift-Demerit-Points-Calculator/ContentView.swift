@@ -60,11 +60,12 @@ struct ContentView: View {
         
             Group {
                 if showErrorMessage {
-                    MessageHandler(mandatoryPenalty: mandatoryPenalty, penaltyPoints: penaltyPoints)
+                    MessageHandler(mandatoryPenalty: mandatoryPenalty, penaltyPoints: penaltyPoints, drivingSpeed: drivingSpeed, speedLimit: speedLimit)
                         .padding(.bottom)
                         .transition(.move(edge: .bottom))
                 }
             }
+            .padding()
     }
     
     private func calculateDemeritPoints() {
