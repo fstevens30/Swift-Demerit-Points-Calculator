@@ -4,7 +4,17 @@ Creating a demerit points calculator using SwiftUI. The code for this app is bas
 
 ## Screenshots
 
-![Screenshot 1](Screenshots/Default-Screen.png)
-![Screenshot 2](Screenshots/Mandatory-Penalty.png)
-![Screenshot 3](Screenshots/Discretional-Penalty.png)
-![Screenshot 4](Screenshots/Not-Speeding.png)
+<table>
+    <tr>
+        <td>Main Screen</td>
+        <td>Mandatory Penatly</td>
+        <td>Discretional Penalty</td>
+        <td>No Penalty</td>
+    </tr>
+    <tr>
+        <td><img src="Screenshots/Default-Screen.png" width="200" height="480"></td>
+        <td><img src="Screenshots/Mandatory-Penalty.png" width="200" height="480"></td>
+        <td><img src="Screenshots/Discretional-Penalty.png" width="200" height="480"></td>
+        <td><img src="Screenshots/Not-Speeding.png" width="200" height="480"></td>
+    </tr>
+</table>
