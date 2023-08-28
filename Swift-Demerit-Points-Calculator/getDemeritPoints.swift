@@ -10,33 +10,30 @@ import Foundation
 func getDemeritPoints(drivingSpeed: Double, speedLimit: Int, holidayPeriod: Bool = false) -> (mandatoryPenalty: Bool, penaltyPoints: Int) {
     let speedDiff = drivingSpeed - Double(speedLimit)
     
-    if drivingSpeed <= Double(speedLimit) {
+    switch (drivingSpeed <= Double(speedLimit), holidayPeriod, speedDiff) {
+    case (true, _, _):
         return (false, 0)
-    }
-    
-    if holidayPeriod {
-        if speedDiff <= 4 {
-            return (false, 10)
-        } else if speedDiff <= 10 {
-            return (true, 10)
-        } else if speedDiff <= 20 {
-            return (true, 20)
-        } else if speedDiff <= 30 {
-            return (true, 30)
-        } else {
-            return (true, 50)
-        }
-    } else {
-        if speedDiff <= 5 {
-            return (false, 10)
-        } else if speedDiff <= 10 {
-            return (true, 10)
-        } else if speedDiff <= 20 {
-            return (true, 20)
-        } else if speedDiff <= 30 {
-            return (true, 30)
-        } else {
-            return (true, 50)
-        }
+
+    case (_, true, let diff) where diff <= 4:
+        return (false, 10)
+    case (_, true, let diff) where diff <= 10:
+        return (true, 10)
+    case (_, true, let diff) where diff <= 20:
+        return (true, 20)
+    case (_, true, let diff) where diff <= 30:
+        return (true, 30)
+    case (_, true, _):
+        return (true, 50)
+
+    case (_, false, let diff) where diff <= 5:
+        return (false, 10)
+    case (_, false, let diff) where diff <= 10:
+        return (true, 10)
+    case (_, false, let diff) where diff <= 20:
+        return (true, 20)
+    case (_, false, let diff) where diff <= 30:
+        return (true, 30)
+    case (_, false, _):
+        return (true, 50)
     }
 }
